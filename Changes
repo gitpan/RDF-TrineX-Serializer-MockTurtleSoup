@@ -6,6 +6,13 @@ Home page:    <https://metacpan.org/release/RDF-TrineX-Serializer-MockTurtleSoup
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=RDF-TrineX-Serializer-MockTurtleSoup>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.002  2013-05-14
+
+ - (Addition) 'apostrophe' option.
+ - (Addition) 'encoding' option.
+ - (Documentation) Minor fixes/improvements.
+ - Nicer output of literals.
+
 0.001  2013-03-15  # Initial release
 
 

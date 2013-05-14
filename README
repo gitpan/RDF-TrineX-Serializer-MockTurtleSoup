@@ -3,7 +3,9 @@ NAME
     good lookin'
 
 SYNOPSIS
-     my $ser = RDF::TrineX::Serializer::MockTurtleSoup->new(%opts);
+     use RDF::TrineX::Serializer::MockTurtleSoup;
+ 
+     my $ser = "RDF::TrineX::Serializer::MockTurtleSoup"->new(%opts);
      $ser->serialize_model_to_file($fh, $model);
 
 DESCRIPTION
@@ -22,7 +24,7 @@ DESCRIPTION
         elsewhere. But also allow the user to supply a list of additional
         URIs that will be abbreviated to QNames:
 
-         RDF::Trine::Serializer::MockTurtleSoup->new(
+         "RDF::TrineX::Serializer::MockTurtleSoup"->new(
             abbreviate => [
                qr{^http://ontologi\.es/},
                qr{^http://purl\.org/},
@@ -55,9 +57,18 @@ DESCRIPTION
         always abbreviated anyway. URIs which cannot be abbreviated to a
         legal QName will just be output as URIs.
 
+    "apostrophe"
+        Boolean; if true, then the serializer will sometimes quote literals
+        with an apostrophe instead of double-quote marks. This is allowed by
+        recent versions of the Turtle spec, but was disallowed by earlier
+        specifications, and not widely supported yet. Defaults to false.
+
     "colspace"
         This allows your predicate-object pairs to line up as nice columns.
         The smaller the number, the closer they get. Default is 20.
+
+    "encoding"
+        Either "ascii" or "utf8". Default is "utf8".
 
     "indent"
         A whitespace string to indent by. The default is one tab character.
