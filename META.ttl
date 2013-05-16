@@ -48,6 +48,7 @@ dist:project
 	doap:programming-language "Perl";
 	doap:release      dist:v_0-001;
 	doap:release      dist:v_0-002;
+	doap:release      dist:v_0-003;
 	doap:repository   [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-rdf-trinex-serializer-mockturtlesoup>;
@@ -88,6 +89,20 @@ dist:v_0-002
 	dcs:released-by   cpan:tobyink;
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.002.tar.gz>;
 	doap:revision     "0.002"^^xsd:string.
+
+dist:v_0-003
+	a                 doap:Version;
+	dc:identifier     "RDF-TrineX-Serializer-MockTurtleSoup-0.003"^^xsd:string;
+	dc:issued         "2013-05-16"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Bugfix;
+			rdfs:label "Fix t/02ser.t test case in RDF::Trine 1.004+, where parsers expect chars (not bytes).";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.003.tar.gz>;
+	doap:revision     "0.003"^^xsd:string.
 
 cpan:tobyink
 	a                 foaf:Person;
