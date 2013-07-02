@@ -29,6 +29,7 @@ dist:project
 	cpant:requires    "RDF::Prefixes 0.003"^^cpant:dsWithVersion;
 	cpant:requires    "RDF::Trine 1.000"^^cpant:dsWithVersion;
 	cpant:requires    "Sort::Key 0"^^cpant:dsWithVersion;
+	cpant:requires    "match::smart"^^cpant:dsWithoutVersion;
 	cpant:test_requires "JSON 2.00"^^cpant:dsWithVersion;
 	cpant:version_from [
 		a nfo:FileDataObject;
@@ -50,6 +51,7 @@ dist:project
 	doap:release      dist:v_0-002;
 	doap:release      dist:v_0-003;
 	doap:release      dist:v_0-004;
+	doap:release      dist:v_0-005;
 	doap:repository   [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-rdf-trinex-serializer-mockturtlesoup>;
@@ -122,6 +124,28 @@ dist:v_0-004
 	dcs:released-by   cpan:tobyink;
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.004.tar.gz>;
 	doap:revision     "0.004"^^xsd:string.
+
+dist:v_0-005
+	a                 doap:Version;
+	dc:identifier     "RDF-TrineX-Serializer-MockTurtleSoup-0.005"^^xsd:string;
+	dc:issued         "2013-07-02"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Bugfix;
+			a dcs:Packaging;
+			rdfs:label "Fix dependencies.";
+			dcs:thanks cpan:jonass;
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.005.tar.gz>;
+	doap:revision     "0.005"^^xsd:string.
+
+cpan:jonass
+	a                 foaf:Person;
+	foaf:name         "Jonas Smedegaard";
+	foaf:nick         "JONASS";
+	foaf:page         <https://metacpan.org/author/JONASS>.
 
 cpan:tobyink
 	a                 foaf:Person;
