@@ -32,4 +32,4 @@ resources:
   homepage: https://metacpan.org/release/RDF-TrineX-Serializer-MockTurtleSoup
   license: http://dev.perl.org/licenses/
   repository: https://github.com/tobyink/p5-rdf-trinex-serializer-mockturtlesoup
-version: 0.003
+version: 0.004

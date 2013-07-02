@@ -7,7 +7,7 @@ use utf8;
 
 BEGIN {
 	$RDF::TrineX::Serializer::MockTurtleSoup::AUTHORITY = 'cpan:TOBYINK';
-	$RDF::TrineX::Serializer::MockTurtleSoup::VERSION   = '0.003';
+	$RDF::TrineX::Serializer::MockTurtleSoup::VERSION   = '0.004';
 }
 
 use Carp;
@@ -15,6 +15,7 @@ use Sort::Key;
 use RDF::Trine;
 use RDF::Trine::Namespace qw( rdf rdfs );
 use RDF::Prefixes;
+use match::smart qw(match);
 
 use parent 'RDF::Trine::Serializer';
 
@@ -61,7 +62,7 @@ sub _is_labelling
 {
 	my $self = shift;
 	my ($st) = @_;
-	return 1 if $st->predicate->uri ~~ $self->{labelling};
+	return 1 if match($st->predicate->uri, $self->{labelling});
 	return;
 }
 
@@ -85,7 +86,7 @@ sub _node
 	}
 	
 	if ($n->is_resource
-	and $c eq 'predicate' || ($n->uri ~~ $self->{abbreviate}))
+	and $c eq 'predicate' || match($n->uri, $self->{abbreviate}))
 	{
 		return $_ for grep defined, $self->{p}->get_qname($n->uri);
 	}

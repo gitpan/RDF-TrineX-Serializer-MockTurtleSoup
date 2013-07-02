@@ -49,6 +49,7 @@ dist:project
 	doap:release      dist:v_0-001;
 	doap:release      dist:v_0-002;
 	doap:release      dist:v_0-003;
+	doap:release      dist:v_0-004;
 	doap:repository   [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-rdf-trinex-serializer-mockturtlesoup>;
@@ -103,6 +104,24 @@ dist:v_0-003
 	dcs:released-by   cpan:tobyink;
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.003.tar.gz>;
 	doap:revision     "0.003"^^xsd:string.
+
+dist:v_0-004
+	a                 doap:Version;
+	dc:identifier     "RDF-TrineX-Serializer-MockTurtleSoup-0.004"^^xsd:string;
+	dc:issued         "2013-07-02"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Update test cases for RDF::Prefixes 0.004.";
+		];
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Drop usage of smartmatch operator.";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/RDF-TrineX-Serializer-MockTurtleSoup-0.004.tar.gz>;
+	doap:revision     "0.004"^^xsd:string.
 
 cpan:tobyink
 	a                 foaf:Person;
