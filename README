@@ -21,8 +21,8 @@ DESCRIPTION
         define criteria for what nodes are "interesting".
 
     *   Use QNames for predicates, classes and datatypes, use full URIs
-        elsewhere. But also allow the user to supply a list of additional
-        URIs that will be abbreviated to QNames:
+        elsewhere. But also allow the user to supply a list of additional URIs
+        that will be abbreviated to QNames:
 
          "RDF::TrineX::Serializer::MockTurtleSoup"->new(
             abbreviate => [
@@ -32,8 +32,8 @@ DESCRIPTION
             ],
          );
 
-    *   Generate those QNames using RDF::Prefixes because it generates
-        awesome prefixes. (Better than "ns1", "ns2", etc.)
+    *   Generate those QNames using RDF::Prefixes because it generates awesome
+        prefixes. (Better than "ns1", "ns2", etc.)
 
     *   When data is equally interesting, sort alphabetically by subject,
         predicate and object. When sorting by predicate, sort by the
@@ -49,58 +49,56 @@ DESCRIPTION
   Options
     The constructor supports the following options:
 
-    "abbreviate"
+    `abbreviate`
         This option will be used as the right-hand side of a smart match to
         test URIs to see if they should be abbreviated to QNames.
 
         URIs used as predicates or as the object of rdf:type triples are
-        always abbreviated anyway. URIs which cannot be abbreviated to a
-        legal QName will just be output as URIs.
+        always abbreviated anyway. URIs which cannot be abbreviated to a legal
+        QName will just be output as URIs.
 
-    "apostrophe"
+    `apostrophe`
         Boolean; if true, then the serializer will sometimes quote literals
         with an apostrophe instead of double-quote marks. This is allowed by
         recent versions of the Turtle spec, but was disallowed by earlier
         specifications, and not widely supported yet. Defaults to false.
 
-    "colspace"
+    `colspace`
         This allows your predicate-object pairs to line up as nice columns.
         The smaller the number, the closer they get. Default is 20.
 
-    "encoding"
+    `encoding`
         Either "ascii" or "utf8". Default is "utf8".
 
-    "indent"
+    `indent`
         A whitespace string to indent by. The default is one tab character.
         (God's chosen indentation.)
 
-    "labelling"
+    `labelling`
         This option will be used as the right-hand side of a smart match to
-        determine which URIs are considered to be equivalent to
-        "rdfs:label". The default is just
-        "http://www.w3.org/2000/01/rdf-schema#label".
+        determine which URIs are considered to be equivalent to `rdfs:label`.
+        The default is just `http://www.w3.org/2000/01/rdf-schema#label`.
 
-    "namespaces"
+    `namespaces`
         A hashref of prefix => URI pairs to define preferred QName prefixes.
         There is no guarantee that these will be honoured, but they usually
-        will. RDF::Prefixes does a damn good job without any help, so this
-        is generally pretty unnecessary.
+        will. RDF::Prefixes does a damn good job without any help, so this is
+        generally pretty unnecessary.
 
-    "priorities"
+    `priorities`
         If defined, must be a coderef. The coderef will be called with
         arguments: the serializer object itself, a node and the
         RDF::Trine::Model being serialized.
 
         The coderef can use data within the model to determine how
-        "interesting" the node is. High numbers are very interesting.
-        Negitive numbers are very boring.
+        "interesting" the node is. High numbers are very interesting. Negitive
+        numbers are very boring.
 
-        Interesting nodes are more likely to appear earlier on in the
-        output.
+        Interesting nodes are more likely to appear earlier on in the output.
 
         Default is undef.
 
-    "repeats"
+    `repeats`
         Boolean. If false (the default), will output data like:
 
          <http://example.com/>
@@ -117,8 +115,8 @@ DESCRIPTION
 
 BUGS
     Please report any bugs to
-    <http://rt.cpan.org/Dist/Display.html?Queue=RDF-TrineX-Serializer-MockTu
-    rtleSoup>.
+    <http://rt.cpan.org/Dist/Display.html?Queue=RDF-TrineX-Serializer-MockTurt
+    leSoup>.
 
 SEE ALSO
     RDF::Trine::Serializer::Turtle.
@@ -129,8 +127,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2013 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
